@@ -1,7 +1,7 @@
 #pragma once//このファイルは一度しか読み込まないでねという意味
 #include <JuceHeader.h>
 
-class MainCpmponent/*子クラス*/:public juce::AudioAppComponent//親クラス
+class MainComponent/*子クラス*/:public juce::AudioAppComponent//親クラス
 {
 	public://クラス外からアクセスできる
 	MainComponent();
@@ -9,8 +9,8 @@ class MainCpmponent/*子クラス*/:public juce::AudioAppComponent//親クラス
 
 	//JUCEで音を扱う時に必要な特別な関数（オーバーライド関数）
 
-	void prepareToplay(int,double) override;//バッファサイズやサンプルレートの受け取り
-	void getnextAudioBlock(const juce::AudioSourceChannelInfo&) override;
+	void prepareToPlay(int,double) override;//バッファサイズやサンプルレートの受け取り
+	void getNextAudioBlock(const juce::AudioSourceChannelInfo&) override;
 	//次に出す音の塊をここで作る、引数の中はここに音を書いてねという場所
 	void releaseResources() override;//オーディオの処理が終わるときに呼ばれる関数です
 
